@@ -1,5 +1,5 @@
 #lesson1:material lesson
-![Alt text](./tu.jpg)
+![Alt text](./images/tu.jpg)
 
 - **normal photo:未加任何效果的设计风格**
 - **material photo:根据谷歌material design文档做出的material设计风格**
@@ -42,10 +42,10 @@
 ```
 `当鼠标经过时，调节盒子的阴影属性来实现深度的变化`
 
-![Alt text](./tu2.jpg)
+![Alt text](./images/tu2.jpg)
 
 `#PS实现material设计风格时，主要使用"内阴影和投影"图层样式属性`
 
-![Alt text](./tu3.jpg)
-![Alt text](./tu4.jpg)
+![Alt text](./images/tu3.jpg)
+![Alt text](./images/tu4.jpg)
 
