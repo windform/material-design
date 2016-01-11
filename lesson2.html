@@ -1,0 +1,395 @@
+<!doctype html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<title>easing速度曲线在material design的应用</title>
+	<link rel="stylesheet" href="./css/style.css">
+	<script src="http://libs.baidu.com/jquery/1.10.2/jquery.min.js"></script>
+	 <script src="js/jquery.easing.1.3.min.js"></script> 
+	<script>
+		function moveEnter(offset,time,easing){
+			event.stopPropagation()
+			$(event.target).parent().prev().stop();
+			$(event.target).parent().prev().animate({left:offset},{
+				duration:time,
+				easing:easing
+			})
+		}
+
+		function moveLeave(offset,time,easing){
+			that=event.target;
+			event.stopPropagation();
+			$(event.target).parent().prev().stop();
+			$(event.target).parent().prev().animate({left:offset},{
+				duration:time,
+				easing:easing,
+				complete:function(event){
+						$(that).parent().prev().css('left',-offset)	
+					}
+			})
+		}
+	</script>
+	</script>
+</head>
+<body>
+
+
+		<strong style="position:absolute;left:30px; top:10px;">结合material design场景动画的<span class="red">逐渐进入、缓慢离开</span>的理论原则，特根据easing缓动函数的运动特征，筛选复合条件的缓动函数.顶部有<span class="red">“+”</span>红色字样的表示复合material design场景动画的设计原则<span class="red">“-”</span>红色字样表示不符合</strong>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">linear <span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,1000,'linear')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,1000,'linear')">leave</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">swing<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'swing')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'swing')">leave</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeInQuad <span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInQuad')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInQuad')">leave</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeOutQuad <span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutQuad')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutQuad')">leave</a>
+				</div>
+			</div>
+		</div>
+
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeInOutQuad <span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutQuad')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutQuad')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeInCubic<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInCubic')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInCubic')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeOutCubic<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutCubic')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutCubic')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeInOutCubic<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutCubic')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutCubic')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInQuart<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInQuart')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInQuart')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeOutQuart<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutQuart')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutQuart')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInOutQuart<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutQuart')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutQuart')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInQuint<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInQuint')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInQuint')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeOutQuint<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutQuint')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutQuint')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInOutQuint<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutQuint')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutQuint')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInExpo<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInExpo')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInExpo')">leave</a>
+				</div>
+			</div>
+		</div>
+						<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeOutExpo<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutExpo')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutExpo')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInOutExpo<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutExpo')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutExpo')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInSine<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInSine')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInSine')">leave</a>
+				</div>
+			</div>
+		</div>
+						<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeOutSine<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutSine')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutSine')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInOutSine<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutSine')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutSine')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInCirc<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInCirc')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInCirc')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeOutCirc<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutCirc')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutCirc')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInOutCirc<span class="red">+</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutCirc')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutCirc')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeInElastic<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInElastic')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInElastic')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar"> easeOutElastic<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutElastic')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutElastic')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeInOutElastic<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutElastic')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutElastic')">leave</a>
+				</div>
+			</div>
+		</div>
+						<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeInBack<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInBack')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInBack')">leave</a>
+				</div>
+			</div>
+		</div>
+						<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeOutBack<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutBack')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutBack')">leave</a>
+				</div>
+			</div>
+		</div>
+		<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeInOutBack<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutBack')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutBack')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeInBounce<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInBounce')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInBounce')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeOutBounce<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeOutBounce')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeOutBounce')">leave</a>
+				</div>
+			</div>
+		</div>
+				<div class="wrapper">
+			<img src="images/iphone6s.png" alt="">
+			<div class="content">
+				<div class="topbar">easeInOutBounce<span class="red">-</span></div>
+				<img class="move" src="images/move_sample.jpg" alt="">
+				<div class="btn_shell">
+					<a href="javascript:void(0)" class="enter" onclick="moveEnter(0,2000,'easeInOutBounce')">enter</a>
+					<a href="javascript:void(0)" class="leave" onclick="moveLeave(400,2000,'easeInOutBounce')">leave</a>
+				</div>
+			</div>
+		</div>
+</body>
+</html>
