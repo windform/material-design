@@ -8,14 +8,16 @@ body{
 }
 
 .wrapper{
-	min-width: 300px;
+	/* min-width: 300px;
 	max-width: 400px;
-	width: 15%;
+	width: 15%; */
+	width:400px;
 	margin-top: 50px;
  	/*background: #EEEDEF;*/
 	position: relative;
 	display: inline-block;
 }
+
 .content{
 	position: absolute;
 	width: 70.4%;
@@ -123,3 +125,105 @@ body{
 	color: #db4437;
 	font-weight: bolder;
 }
+
+.layer,.layer1{
+			margin: 0 auto;
+			margin-top: 50px;
+			width: 150px;
+			height: 150px;
+			background: #0d9955;
+			overflow: hidden;
+			
+			box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.14);
+			position: relative;
+			-webkit-transition:all 0.2s ease-in;
+			-moz-transition:all 0.2s ease-in;
+			-o-transition:all 0.2s ease-in;
+			transition:all 0.2s ease-in;
+		}
+
+		.layer2{
+			position: absolute;
+			width: 44px;
+			height: 44px;
+			box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.14);
+			bottom: 10px;
+			left: 10px;
+			cursor:pointer;
+		}
+
+		.nav{
+			position: absolute;
+			background: #0d9955;
+			box-shadow: 0px 1px 4px 0px rgba(0,0,0,0.14);
+			left: 2px;
+			bottom: 46px;
+		}
+
+		a.layer1{
+			display: block;
+			-webkit-transition:all 0.5s ease-in;
+			-moz-transition:all 0.5s ease-in;
+			-o-transition:all 0.5s ease-in;
+			transition:all 0.5s ease-in;
+		}
+
+		a.layer1:active{
+			box-shadow: 0px 6px 6px 0px rgba(0,0,0,0.3);
+		}
+
+		.layer1{
+			line-height: 182px;
+		}
+
+		.layer1 img{
+			-webkit-transition:all 0.8s ease-in;
+			-moz-transition:all 0.8s ease-in;
+			-o-transition:all 0.8s ease-in;
+			transition:all 0.8s ease-in;
+		}
+
+		.layer1:hover img{
+			transform:rotate(360deg);
+
+		}
+
+
+	
+
+		.circle{
+			width: 50px;
+			height: 50px;
+			border-radius:50%;
+			/* background: #db4437; */
+			background: #fff;
+			position: absolute;
+			opacity: 0.5;
+			-webkit-transition:all 0.6s ease-in;
+			-moz-transition:all 0.6s ease-in;
+			-o-transition:all 0.6s ease-in;
+			transition:all 0.6s ease-in;
+
+		}
+
+		.circle:hover{
+			-webkit-transform:scale(2.5,2.5);
+			-moz-transform:scale(2.5,2.5);
+			-o-transform:scale(2.5,2.5);
+			transform:scale(2.5,2.5);
+			opacity: 0;
+		}
+		.ui{
+			color: #fff;
+		}
+
+
+
+
+		.font{
+			margin: 20px;
+			text-align: left;
+			text-indent: 28px;
+		}
+
+
